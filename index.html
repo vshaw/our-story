@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Film Interact</title>
+  <link rel = "stylesheet" href = "gone.css">
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+<div id="startDiv" style="width:1350px; height:520px; text-align:center; vertical-align:middle; line-height:520px">
+  <h1 id="startText">"Start"</h1>
+</div>  
+
+ <!-- <button onclick="playPause()">Play/Pause</button> 
+  <button onclick ="switchVid()">Switch</button>
+
+  <br> -->
+
+  <video id="video1" width="120%" height="120%" style="display:none" >
+    <source src="https://googledrive.com/host/0BzHX1izQXYUfalRhMmpnSmJRR0U" type='video/mp4'/>
+</video>
+
+
+
+
+   <!-- <source src="https://drive.google.com/uc?export=download&id=0B0JMGMGgxp9WMEdWb1hyQUhlOWs" type='video/mp4'/>
+
+
+<iframe src="https://drive.google.com/file/d/0BzHX1izQXYUfalRhMmpnSmJRR0U/preview" width="640" height="480"></iframe> -->
+
+
+ <!-- <video id="video1" width="120%" height="120%" style="display:none">
+    <source src="intro.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video> -->
+  <!-- <video id="video2" width="80%" height="80%" style="display:none"  >
+    <source src="avengers.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video> -->
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/annyang/1.4.0/annyang.min.js"></script>
+<script>
+  if (annyang) {
+    console.log("in");
+  // Let's define our first command. First the text we expect, and then the function it should call
+  var commands = {
+    'start': function() { play1() }
+  };
+  var commands2 = {
+    'switch': function() { switchVid() }
+  };
+
+  // Add our commands to annyang
+  annyang.addCommands(commands);
+  annyang.addCommands(commands2, false);
+  // Start listening. You can call this here, or attach this call to an event, button, etc.
+  annyang.start();
+}
+else
+  console.log("out");
+</script>
+<script> 
+function play1() { 
+  var startVid = document.getElementById("video1"); 
+  var div = document.getElementById("startDiv");
+  div.style.display="none";
+  startVid.style.display="initial";
+  startVid.play();
+  /*  if (myVideo.paused) 
+        myVideo.play(); 
+    else 
+        myVideo.pause(); */
+} 
+</script>
+<!--<script>
+function switchVid() {
+    var myVideo = document.getElementById("video1"); 
+  var myVideo2 = document.getElementById("video2");
+  myVideo.style.display = "none";
+  myVideo2.style.display="initial";
+}
+</script> -->
+
+
+</body>
+</html>
+  <!--<div id = "containerIntro">
+
+   <video id = "myVideo" width="640" height="360" >
+    <source src="rma.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+   <video id = "suju" width="640" height="360" style = "display:none">
+    <source src="suju.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video> 
+
+    <button onclick: "playVid2()"> Click </button> 
+  </div>
+
+  <script>
+  function playVid1() { 
+    var vid = document.getElementById("myVideo");
+    vid.play(); 
+  } 
+  </script>
+  <script>
+      var vid1 = document.getElementById("myVideo");
+
+  function playVid2() { 
+  //  var vid = document.getElementById("suju");
+  vid2.play();
+   //vid1.style.display = "none";
+   // vid.style.display = "block"
+   // vid.play(); 
+  } 
+
+  </script> -->
+
+ 
+
