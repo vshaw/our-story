@@ -17,16 +17,36 @@
 
   <br> -->
 
-  <video id="video1" width="120%" height="120%" style="display:none" >
+  
+  <video id="intro" width="120%" height="120%" style="display:none" >
     <source src="https://googledrive.com/host/0BzHX1izQXYUfalRhMmpnSmJRR0U" type='video/mp4'/>
-</video>
+  </video>
+
+<video id="classroom" width="120%" height="120%" style="display:none" >
+    <source src="https://googledrive.com/host/0BzHX1izQXYUfSDNtX0tuTGdYMm8" type='video/mp4'/>
+  </video>
+
+
+<video id="indorm" width="120%" height="120%" style="display:none" >
+    <source src="https://googledrive.com/host/0BzHX1izQXYUfd2hKV0NUNl9WcGM" type='video/mp4'/>
+  </video>
+
+  <video id="allonmyown" width="120%" height="120%" style="display:none" >
+    <source src="https://googledrive.com/host/0BzHX1izQXYUfLVJWQ3JzOHR6RXc" type='video/mp4'/>
+  </video>
+
+  <video id="together" width="120%" height="120%" style="display:none" >
+    <source src="https://googledrive.com/host/0BzHX1izQXYUfTHNuWHNlMkhfdFE" type='video/mp4'/>
+  </video>
+
+  <video id="strangerdanger" width="120%" height="120%" style="display:none" >
+    <source src="https://googledrive.com/host/0BzHX1izQXYUfeTkyLWg4ZDlXQ1k" type='video/mp4'/>
+  </video>
 
 
 
 
    <!-- <source src="https://drive.google.com/uc?export=download&id=0B0JMGMGgxp9WMEdWb1hyQUhlOWs" type='video/mp4'/>
-
-
 <iframe src="https://drive.google.com/file/d/0BzHX1izQXYUfalRhMmpnSmJRR0U/preview" width="640" height="480"></iframe> -->
 
 
@@ -46,15 +66,26 @@
     console.log("in");
   // Let's define our first command. First the text we expect, and then the function it should call
   var commands = {
-    'start': function() { play1() }
+    'start': function() { playIntro() }
   };
   var commands2 = {
-    'switch': function() { switchVid() }
+    'class': function() { playClassroom() }
   };
-
+  var commands3 = {
+    'dorm': function() { playDorm() }
+  };
+  var commands4 = {
+    'sure': function() { playAlone() }
+  };
+  var commands5 = {
+    'bad idea': function() { playTogether() }
+  };
   // Add our commands to annyang
   annyang.addCommands(commands);
   annyang.addCommands(commands2, false);
+  annyang.addCommands(commands3, false);
+  annyang.addCommands(commands4, false);
+  annyang.addCommands(commands5, false);
   // Start listening. You can call this here, or attach this call to an event, button, etc.
   annyang.start();
 }
@@ -62,63 +93,57 @@ else
   console.log("out");
 </script>
 <script> 
-function play1() { 
-  var startVid = document.getElementById("video1"); 
+function playIntro() { 
+  var startVid = document.getElementById("intro"); 
   var div = document.getElementById("startDiv");
   div.style.display="none";
   startVid.style.display="initial";
   startVid.play();
-  /*  if (myVideo.paused) 
-        myVideo.play(); 
-    else 
-        myVideo.pause(); */
 } 
 </script>
-<!--<script>
-function switchVid() {
-    var myVideo = document.getElementById("video1"); 
-  var myVideo2 = document.getElementById("video2");
-  myVideo.style.display = "none";
-  myVideo2.style.display="initial";
-}
-</script> -->
-
+<script> 
+function playClassroom() { 
+  var startVid = document.getElementById("intro"); 
+  var classroom = document.getElementById("classroom");
+  startVid.pause();
+  startVid.style.display="none";
+  classroom.style.display="initial"
+  classroom.play();
+} 
+</script>
+<script> 
+function playDorm() { 
+  var classroom = document.getElementById("classroom"); 
+  var dorm = document.getElementById("indorm");
+  classroom.pause();
+  classroom.style.display="none";
+  dorm.style.display="initial";
+  dorm.play();
+} 
+</script>
+<script> 
+function playAlone() { 
+  var dorm = document.getElementById("indorm"); 
+  var alone = document.getElementById("allonmyown");
+  dorm.pause();
+  dorm.style.display="none";
+  alone.style.display="initial";
+  alone.play();
+} 
+</script>
+<script> 
+function playTogether() { 
+  var dorm = document.getElementById("indorm"); 
+  var together = document.getElementById("together");
+  dorm.pause();
+  dorm.style.display="none";
+  together.style.display="initial";
+  together.play();
+} 
+</script>
 
 </body>
 </html>
-  <!--<div id = "containerIntro">
-
-   <video id = "myVideo" width="640" height="360" >
-    <source src="rma.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-
-   <video id = "suju" width="640" height="360" style = "display:none">
-    <source src="suju.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video> 
-
-    <button onclick: "playVid2()"> Click </button> 
-  </div>
-
-  <script>
-  function playVid1() { 
-    var vid = document.getElementById("myVideo");
-    vid.play(); 
-  } 
-  </script>
-  <script>
-      var vid1 = document.getElementById("myVideo");
-
-  function playVid2() { 
-  //  var vid = document.getElementById("suju");
-  vid2.play();
-   //vid1.style.display = "none";
-   // vid.style.display = "block"
-   // vid.play(); 
-  } 
-
-  </script> -->
 
  
 
