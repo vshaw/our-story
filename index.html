@@ -12,22 +12,16 @@
   <h1 id="startText">"Start"</h1>
 </div>  
 
- <!-- <button onclick="playPause()">Play/Pause</button> 
-  <button onclick ="switchVid()">Switch</button>
-
-  <br> -->
-
-
   <video id="intro" width="120%" height="120%" autoplay >
     <source src="https://googledrive.com/host/0B2cX9HGohXSQfkkta29EM0xiclpGVFpCT3hwYkROa2VLSkU4dEFxOEdMVk1wVnJOSk5ZWG8/intro3.mp4" type='video/mp4'/>
   </video>
 
- <video id="classroom" width="120%" height="120%" style="display:none" >
+  <video id="classroom" width="120%" height="120%" style="display:none" >
     <source src="https://googledrive.com/host/0B2cX9HGohXSQfkkta29EM0xiclpGVFpCT3hwYkROa2VLSkU4dEFxOEdMVk1wVnJOSk5ZWG8/classroom.mp4" type='video/mp4'/>
   </video>
 
 
-<video id="indorm" width="120%" height="120%" style="display:none" >
+  <video id="indorm" width="120%" height="120%" style="display:none" >
     <source src="https://googledrive.com/host/0B2cX9HGohXSQfkkta29EM0xiclpGVFpCT3hwYkROa2VLSkU4dEFxOEdMVk1wVnJOSk5ZWG8/indorm.mp4" type='video/mp4'/>
   </video>
 
@@ -48,8 +42,8 @@
   </video> -->
 
 
-<script src="//cdnjs.cloudflare.com/ajax/libs/annyang/1.4.0/annyang.min.js"></script>
-<script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/1.4.0/annyang.min.js"></script>
+  <script>
   if (annyang) {
     console.log("in");
   // Let's define our first command. First the text we expect, and then the function it should call
@@ -176,6 +170,41 @@ function playStranger() {
 } 
 </script>
 
+<script type='text/javascript'>
+var stranger = document.getElementById('strangerdanger');
+var div = document.getElementById("startDiv");
+stranger.addEventListener('ended', finishStranger, false); 
+function finishStranger(e) {
+  if(!e) {e = window.event; }
+  stranger.style.display="none";
+  stranger.currentTime = 0; 
+  div.style.display = "initial";
+}
+</script>
+
+<script type='text/javascript'>
+var together = document.getElementById('together');
+var div = document.getElementById("startDiv");
+together.addEventListener('ended', finishTogether, false); 
+function finishTogether(e) {
+  if(!e) {e = window.event; }
+  together.style.display="none";
+  together.currentTime = 0; 
+  div.style.display = "initial";
+}
+</script>
+
+<script type='text/javascript'>
+var alone = document.getElementById('allonmyown');
+var div = document.getElementById("startDiv");
+alone.addEventListener('ended', finishAlone, false); 
+function finishAlone(e) {
+  if(!e) {e = window.event; }
+  alone.style.display="none";
+  alone.currentTime = 0; 
+  div.style.display = "initial";
+}
+</script>
 
 </body>
 </html>
