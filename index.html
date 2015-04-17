@@ -17,46 +17,34 @@
 
   <br> -->
 
-  
-  <video id="intro" width="120%" height="120%" style="display:none" >
-    <source src="https://googledrive.com/host/0BzHX1izQXYUfalRhMmpnSmJRR0U" type='video/mp4'/>
+
+  <video id="intro" width="120%" height="120%" autoplay >
+    <source src="https://googledrive.com/host/0B2cX9HGohXSQfkkta29EM0xiclpGVFpCT3hwYkROa2VLSkU4dEFxOEdMVk1wVnJOSk5ZWG8/intro3.mp4" type='video/mp4'/>
   </video>
 
-<video id="classroom" width="120%" height="120%" style="display:none" >
-    <source src="https://googledrive.com/host/0BzHX1izQXYUfSDNtX0tuTGdYMm8" type='video/mp4'/>
+ <video id="classroom" width="120%" height="120%" style="display:none" >
+    <source src="https://googledrive.com/host/0B2cX9HGohXSQfkkta29EM0xiclpGVFpCT3hwYkROa2VLSkU4dEFxOEdMVk1wVnJOSk5ZWG8/classroom.mp4" type='video/mp4'/>
   </video>
 
 
 <video id="indorm" width="120%" height="120%" style="display:none" >
-    <source src="https://googledrive.com/host/0BzHX1izQXYUfd2hKV0NUNl9WcGM" type='video/mp4'/>
+    <source src="https://googledrive.com/host/0B2cX9HGohXSQfkkta29EM0xiclpGVFpCT3hwYkROa2VLSkU4dEFxOEdMVk1wVnJOSk5ZWG8/indorm.mp4" type='video/mp4'/>
   </video>
 
   <video id="allonmyown" width="120%" height="120%" style="display:none" >
-    <source src="https://googledrive.com/host/0BzHX1izQXYUfLVJWQ3JzOHR6RXc" type='video/mp4'/>
+    <source src="https://googledrive.com/host/0B2cX9HGohXSQfkkta29EM0xiclpGVFpCT3hwYkROa2VLSkU4dEFxOEdMVk1wVnJOSk5ZWG8/alone.mp4" type='video/mp4'/>
   </video>
 
   <video id="together" width="120%" height="120%" style="display:none" >
-    <source src="https://googledrive.com/host/0BzHX1izQXYUfTHNuWHNlMkhfdFE" type='video/mp4'/>
+    <source src="https://googledrive.com/host/0B2cX9HGohXSQfkkta29EM0xiclpGVFpCT3hwYkROa2VLSkU4dEFxOEdMVk1wVnJOSk5ZWG8/together.mp4" type='video/mp4'/>
   </video>
 
   <video id="strangerdanger" width="120%" height="120%" style="display:none" >
-    <source src="https://googledrive.com/host/0BzHX1izQXYUfeTkyLWg4ZDlXQ1k" type='video/mp4'/>
-  </video>
-
-
-
-
-   <!-- <source src="https://drive.google.com/uc?export=download&id=0B0JMGMGgxp9WMEdWb1hyQUhlOWs" type='video/mp4'/>
-<iframe src="https://drive.google.com/file/d/0BzHX1izQXYUfalRhMmpnSmJRR0U/preview" width="640" height="480"></iframe> -->
-
-
- <!-- <video id="video1" width="120%" height="120%" style="display:none">
-    <source src="intro.mp4" type="video/mp4">
-    Your browser does not support HTML5 video.
+    <source src="https://googledrive.com/host/0B2cX9HGohXSQfkkta29EM0xiclpGVFpCT3hwYkROa2VLSkU4dEFxOEdMVk1wVnJOSk5ZWG8/strangerdanger.mp4" type='video/mp4'/>
   </video> -->
-  <!-- <video id="video2" width="80%" height="80%" style="display:none"  >
-    <source src="avengers.mp4" type="video/mp4">
-    Your browser does not support HTML5 video.
+
+  <video id="library" width="120%" height="120%" style="display:none" >
+    <source src="https://googledrive.com/host/0B2cX9HGohXSQfkkta29EM0xiclpGVFpCT3hwYkROa2VLSkU4dEFxOEdMVk1wVnJOSk5ZWG8/library.mp4" type='video/mp4'/>
   </video> -->
 
 
@@ -80,12 +68,20 @@
   var commands5 = {
     'bad idea': function() { playTogether() }
   };
+  var commands6 = {
+    'library' : function() { playLibrary() }
+  };
+  var commands7 = {
+    'dorm' : function() { playStranger() }
+  };
   // Add our commands to annyang
   annyang.addCommands(commands);
   annyang.addCommands(commands2, false);
   annyang.addCommands(commands3, false);
   annyang.addCommands(commands4, false);
   annyang.addCommands(commands5, false);
+  annyang.addCommands(commands6, false);
+  annyang.addCommands(commands7, false);
   // Start listening. You can call this here, or attach this call to an event, button, etc.
   annyang.start();
 }
@@ -106,17 +102,37 @@ function playClassroom() {
   var startVid = document.getElementById("intro"); 
   var classroom = document.getElementById("classroom");
   startVid.pause();
+  startVid.currentTime = 0; 
   startVid.style.display="none";
   classroom.style.display="initial"
   classroom.play();
 } 
 </script>
+
+<script> 
+function playLibrary() { 
+  var startVid = document.getElementById("intro"); 
+  var library = document.getElementById("library");
+  startVid.pause();
+  startVid.currentTime = 0; 
+  startVid.style.display="none";
+  library.style.display="initial"
+  library.play();
+} 
+</script>
+
+
 <script> 
 function playDorm() { 
   var classroom = document.getElementById("classroom"); 
+  var library = document.getElementById("library"); 
   var dorm = document.getElementById("indorm");
   classroom.pause();
+  classroom.currentTime = 0; 
+  library.pause();
+  library.currentTime = 0; 
   classroom.style.display="none";
+  library.style.display="none";
   dorm.style.display="initial";
   dorm.play();
 } 
@@ -126,6 +142,7 @@ function playAlone() {
   var dorm = document.getElementById("indorm"); 
   var alone = document.getElementById("allonmyown");
   dorm.pause();
+  dorm.currentTime = 0; 
   dorm.style.display="none";
   alone.style.display="initial";
   alone.play();
@@ -136,11 +153,29 @@ function playTogether() {
   var dorm = document.getElementById("indorm"); 
   var together = document.getElementById("together");
   dorm.pause();
+  dorm.currentTime = 0; 
   dorm.style.display="none";
   together.style.display="initial";
   together.play();
 } 
 </script>
+
+<script> 
+function playStranger() { 
+  var classroom = document.getElementById("classroom"); 
+  var library = document.getElementById("library"); 
+  var stranger = document.getElementById("strangerdanger");
+  classroom.pause();
+  classroom.currentTime = 0; 
+  library.pause();
+  library.currentTime = 0; 
+  classroom.style.display="none";
+  library.style.display="none";
+  stranger.style.display="initial";
+  stranger.play();
+} 
+</script>
+
 
 </body>
 </html>
