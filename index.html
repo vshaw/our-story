@@ -18,7 +18,7 @@
   </video>
 
   <video id="classroom" width="120%" height="120%" preload="auto" controls style="display:none" >
-    <source src="vids/classroom_compresssed.mp4" type='video/mp4'/>
+    <source src="vids/classroom_compressed.mp4" type='video/mp4'/>
   Your browser does not support the video tag.
   </video>
 
@@ -39,7 +39,7 @@
   </video>
 
   <video id="strangerdanger" width="120%" height="120%" preload="auto" controls style="display:none" >
-    <source src="vids/strangerdanger_compressed.mp4" type='video/mp4'/>
+    <source src="vids/strangerdanger_compresed.mp4" type='video/mp4'/>
   Your browser does not support the video tag.
   </video> 
 
@@ -64,7 +64,7 @@
     'go back to my dorm': function() { playDorm() }
   };
   var commands4 = {
-    'sure': function() { playAlone() }
+    'okay': function() { playAlone() }
   };
   var commands5 = {
     'bad idea': function() { playTogether() }
@@ -83,6 +83,7 @@
   annyang.addCommands(commands5, false);
   annyang.addCommands(commands6, false);
   annyang.addCommands(commands7, false);
+  annyang.addCommands(commands8, false);
   // Start listening. You can call this here, or attach this call to an event, button, etc.
   annyang.start();
 }
